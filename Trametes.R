@@ -749,12 +749,3 @@ predicciones <- predict(rf_model, type = "response")
 install.packages("caret")
 library(caret)
 confusionMatrix(predicciones, df$Treatment)
-
-
-# -------------------------- #
-#    Final Plots  #
-# -------------------------- #
-# Nutritional
-# Right
-(macro_right <- p_sug_ao / p_fatty)
-
