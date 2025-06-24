@@ -152,7 +152,7 @@ ggplot(df_long, aes(x = Extract, y = Microorganism, fill = Value)) +
   facet_grid(Activity ~ Ratio, scales = "free_y", space = "free_y", drop = TRUE) +
   theme_linedraw() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
+df_long
 
 
 
