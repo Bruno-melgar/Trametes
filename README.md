@@ -7,14 +7,33 @@ Comparative evaluation of nutritional composition, chemical constituents, and bi
 ---
 
 ### Creators:
+- **Ana Saldanha**<sup>1,2</sup>  <br/>	
+ORCID:0000-0003-2341-1446
+- **Mikel Añibarro-Ortega**<sup>1</sup>  <br/>	
+ORCID:0000-0002-2835-5079
+- **Helena Laronha**<sup>2</sup>  <br/>	
+ORCID:0000-0002-9959-7526
+- **Gonçalo S.A. Martins**<sup>3</sup>  <br/>	
+ORCID:
+- **José Pinela**<sup>1,4</sup>  <br/>	
+ORCID:0000-0001-7523-1637
+- **Higor Rosse**<sup>5</sup>  <br/>	
+ORCID:0000-0003-0555-4152
+- **Manuel A. Coimbra**<sup>2</sup>  <br/>	
+ORCID:0000-0001-8898-6342
+- **Maria Inês Dias**<sup>1</sup>  <br/>	
+ORCID:0000-0001-8744-7814
 - **Bruno Melgar**<sup>1</sup>  <br/>	
 ORCID:0000-0002-5825-6872
-- **Carla Pereira**<sup>1,2</sup>  <br/>
+- **Carla Pereira**<sup>1</sup>  <br/>
 ORCID:0000-0003-0093-771X
 
 
-<sup>1</sup> Centro de Investigação de Montanha (CIMO), Instituto Politécnico de Bragança, Campus de Santa Apolónia, 5300-253 Bragança, Portugal <br/>
-<sup>2</sup> Laboratório Associado para a Sustentabilidade e Tecnologia em Regiões de Montanha (SusTEC), Instituto Politécnico de Bragança, Campus de Santa Apolónia, 5300-253 Bragança, Portugal <br/>
+<sup>1</sup> CIMO, LA SusTEC, Instituto Politécnico de Bragança, Campus de Santa Apolónia, 5300-253 Bragança, Portugal <br/>
+<sup>2</sup> LAQV-REQUIMTE, Department of Chemistry, University of Aveiro, Campus Universitário de Santiago, 3810-193 Aveiro, Portugal <br/>
+<sup>3</sup> Ostras do Campo, Baçal estrada de Rabal, 5300-432 Bragança <br/>
+<sup>4</sup> National Institute for Agricultural and Veterinary Research (INIAV), I.P., Rua dos Lágidos, Lugar da Madalena, 4485-655 Vairão, Vila do Conde, Portugal <br/>
+<sup>5</sup> MORE – Laboratório Colaborativo Montanhas de Investigação /Edificio do Brigantia Ecopark, Avª Cidade de León 506, 5300-358 Bragança <br/>
 
 ---
 ### Metadata:
