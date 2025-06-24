@@ -395,6 +395,20 @@ df_pvals_sugars_glu <- df_pvals_sugars_glu %>%
   ))
 
 
+(summary_table_sug <- df_sugars %>%
+  group_by(Treatment, Variable) %>%
+  summarise(
+    Mean = mean(Value, na.rm = TRUE),
+    SD = sd(Value, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    Summary = sprintf("%.2f ± %.2f", Mean, SD)
+  ) %>%
+  select(Treatment, Variable, Summary) %>%
+  pivot_wider(names_from = Treatment, values_from = Summary))
+
+
 # AO plot
 p2 <- ggplot(df_acids, aes(x = Treatment, y = Value, fill = Treatment)) +
   geom_boxplot() +
@@ -423,6 +437,19 @@ p2 <- p2 +
     facets = vars(Variable)
   )
 
+
+(summary_table_oa <- df_acids %>%
+    group_by(Treatment, Variable) %>%
+    summarise(
+      Mean = mean(Value, na.rm = TRUE),
+      SD = sd(Value, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    mutate(
+      Summary = sprintf("%.3f ± %.3f", Mean, SD)
+    ) %>%
+    select(Treatment, Variable, Summary) %>%
+    pivot_wider(names_from = Treatment, values_from = Summary))
 
 # Final plot
 p.mix <- p1 + p3 +
@@ -495,6 +522,19 @@ means_fatty <- df_fatty %>%
   group_by(Variable, Treatment) %>%
   summarise(mean_value = mean(Value, na.rm = TRUE), .groups = "drop") %>%
   pivot_wider(names_from = Treatment, values_from = mean_value)
+
+(summary_table_fatty <- df_fatty %>%
+    group_by(Treatment, Variable) %>%
+    summarise(
+      Mean = mean(Value, na.rm = TRUE),
+      SD = sd(Value, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    mutate(
+      Summary = sprintf("%.2f ± %.2f", Mean, SD)
+    ) %>%
+    select(Treatment, Variable, Summary) %>%
+    pivot_wider(names_from = Treatment, values_from = Summary))
 
 # Stats between treatments
 results_ttest_fatty <- df_fatty %>%
@@ -749,3 +789,12 @@ predicciones <- predict(rf_model, type = "response")
 install.packages("caret")
 library(caret)
 confusionMatrix(predicciones, df$Treatment)
+
+
+# -------------------------- #
+#    Final Plots  #
+# -------------------------- #
+# Nutritional
+# Right
+(macro_right <- p_sug_ao / p_fatty)
+
