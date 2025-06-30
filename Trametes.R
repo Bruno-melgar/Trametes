@@ -233,6 +233,9 @@ results_ttest_prox <- df_stat_prox %>%
 df_stat_sug <- df_long %>%
   filter(Group == "Sugars")
 
+df_stat_sug <- df_stat_sug %>%
+  mutate(Value = Value * 0.1)
+
 # Sugars t-test
 results_ttest_sug <- df_stat_sug %>%
   group_by(Variable) %>%
@@ -268,6 +271,9 @@ df_sug_oa_clean <- df_long %>%
 
 # Create Sugars and Organic acids subset
 df_sugars <- df_sug_oa_clean %>% filter(Group == "Sugars")
+df_sugars <- df_sugars %>%
+  mutate(Value = Value * 0.1)
+
 df_acids  <- df_sug_oa_clean %>% filter(Group == "Organic acids")
 
 # Building stat-dataframe for plotting in sugars
