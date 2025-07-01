@@ -19,7 +19,7 @@ packages <- c("tidyverse","cluster", "factoextra","NbClust","tidyr",
               "reshape2","RColorBrewer","SensoMineR","FactoMineR","stats",
               "dplyr","writexl","gtools","ggbiplot","ggrepel","pheatmap", 
               "ggcorrplot", "CCA", "ggstatsplot", "paletteer", "scales",
-              "broom", "drc", "patchwork", "ggalt")
+              "broom", "drc", "patchwork", "ggalt", "ggtext")
 inst(packages)
 theme_set(theme_minimal())
 
@@ -130,6 +130,7 @@ merged_df <- merged_df %>%
 # -------------------------- #
 merged_df$Microorganism <- factor(merged_df$Microorganism)
 
+# Pivot and celaning
 df_long <- merged_df %>%
   pivot_longer(
     cols = c(Ratio_E211, Ratio_E224),
@@ -142,18 +143,28 @@ df_long <- merged_df %>%
                    "Ratio_E224" = "E224"),
     Extract = factor(Extract, levels = c("CEA", "Wild"))
   ) %>%
-  filter(!is.na(Value)) %>%
-  mutate(Microorganism = factor(Microorganism, levels = sort(unique(Microorganism), decreasing = TRUE)))
+  filter(!is.na(Value))
 
+# set original order
+micro_levels <- df_long %>%
+  pull(Microorganism) %>%
+  unique() %>%
+  sort(decreasing = TRUE)
+
+# Markdown style and re-order
+df_long <- df_long %>%
+  mutate(Microorganism = paste0("*", Microorganism, "*")) %>%
+  mutate(Microorganism = factor(Microorganism, levels = paste0("*", micro_levels, "*")))
+
+# Plotting
 ggplot(df_long, aes(x = Extract, y = Microorganism, fill = Value)) +
   geom_tile(color = "white") +
   geom_text(aes(label = round(Value, 2)), size = 3, color = "black") +
   scale_fill_gradient2(low = "red", mid = "white", high = "lightgreen", midpoint = 1, name = "Ratio") +
   facet_grid(Activity ~ Ratio, scales = "free_y", space = "free_y", drop = TRUE) +
   theme_linedraw() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-df_long
-
-
-
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.text.y = ggtext::element_markdown()
+  )
 
