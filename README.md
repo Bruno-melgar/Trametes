@@ -4,6 +4,7 @@
 - **Title of the dataset:** Trametes
 - **Data underlying publication:** <br/>
 Comparative evaluation of nutritional composition, chemical constituents, and bioactive potential of wild versus ex-situ cultivated _Trametes versicolor_
+- **Publication Link:** <br/> https://link.springer.com/article/10.1007/s13399-026-07140-8#additional-information
 ---
 
 ### Creators:
